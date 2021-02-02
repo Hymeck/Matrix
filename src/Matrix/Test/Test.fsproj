@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <GenerateProgramFile>false</GenerateProgramFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NUnit" Version="3.13.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="Test.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Library\Library.fsproj" />
+    </ItemGroup>
+
+</Project>

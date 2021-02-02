@@ -13,7 +13,7 @@ module Util =
         newX.At(i, double minusOne)
         newX
 
-    let private multiply (multiplier: double) (x: Vector<double>) = (double (-1) / multiplier) * x
+    let private multiply (multiplier: double) (x: Vector<double>) = ((-1.0) / multiplier) * x
 
     let private almostIdentityMatrix (column: int) (x: Vector<double>) =
         let mutable identityMatrix =
@@ -24,6 +24,9 @@ module Util =
 
         identityMatrix.SetColumn(column, x)
         identityMatrix
+
+    // todo: perform more efficient (O(n^3) -> O(n^2))
+    let private matrixProduct q a = q * a
 
     let perform (A: Matrix<double>) (x: Vector<double>) (i: int): Option<Matrix<double>> =
         //todo: check size corresponding
@@ -39,4 +42,4 @@ module Util =
                 |> multiply (l.At i) // 3.
                 |> almostIdentityMatrix i // 4.
 
-            Some(q * A) // 5.
+            Some(matrixProduct q A) // 5.
