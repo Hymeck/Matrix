@@ -23,8 +23,7 @@ let Matrix2D () =
     let i = 2 - 1
 
     let result = Util.perform matrix2d x i
-    // todo: what's wrong? why it returns [[-1; 1]; [1; 0]]?
-    let expected = matrix [ [ 3.0; -5.5 ]; [ 2.0; -4.0 ] ]
+    let expected = matrix [ [ -1.0; 1.0 ]; [ 1.0; 0.0 ] ]
     Assert.AreEqual(expected, result.Value)
 
 [<Test>]
