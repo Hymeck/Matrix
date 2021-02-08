@@ -6,7 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="MatrixReader.fs" />
         <Compile Include="Program.fs" />
+        <Content Include="matrix.txt">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
